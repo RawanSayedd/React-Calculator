@@ -1,38 +1,61 @@
-.App {
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  font-family: "Roboto", sans-serif;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(25, 228, 137, 1) 34%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  margin: 0;
+  padding: 0;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.calculator-container {
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  margin-top: 40px;
+  grid-template-columns: repeat(4, 6rem);
+  grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+}
+.calculator-container > button {
+  cursor: pointer;
+  font-size: 30px;
+  border: 1px solid rgb(203, 203, 203, 0.5);
+  outline: none;
+  background: rgba(255, 255, 255, 0.7);
+}
+.calculator-container > button:hover,
+.calculator-container > button:focus {
+  background: rgba(255, 255, 255, 0.8);
+}
+.span-two {
+  grid-column: span 2;
+}
+.output {
+  grid-column: 1 / -1;
+  background: rgba(0, 0, 0, 0.7);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 0.75rem;
+  word-wrap: break-word;
+  word-break: break-all;
 }
-
-.App-link {
-  color: #61dafb;
+.output .previous-operand {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 20px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.output .current-operand {
+  color: #fff;
+  font-size: 30px;
 }
